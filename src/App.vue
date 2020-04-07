@@ -26,15 +26,21 @@ export default {
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: "Open Sans", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("./assets/3-cookies.jpg"); */
-  background-repeat: no-repeat;
   text-align: center;
-}
-#warnung-box {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #222;
 }
 .warnung {
