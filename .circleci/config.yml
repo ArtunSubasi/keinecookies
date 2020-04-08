@@ -14,7 +14,7 @@ jobs:
             - run: npm run build
   deploy:
     docker:
-      - image: cimg/base:2020.01
+      - image: cimg/python:3.6
     steps:
       - aws-s3/sync: # Invoke the sync command declared in the s3 orb
           from: .
