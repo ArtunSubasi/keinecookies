@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import LandingPage from './LandingPage.vue'
 import Impressum from './Impressum.vue'
+import Datenschutz from './Datenschutz.vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -18,7 +19,8 @@ Vue.use(VueRouter)
 // We'll talk about nested routes later.
 const routes = [
   { path: '/', component: LandingPage },
-  { path: '/impressum', component: Impressum }
+  { path: '/impressum', component: Impressum },
+  { path: '/datenschutz', component: Datenschutz }
 ]
 
 // 3. Create the router instance and pass the `routes` option

@@ -14,7 +14,8 @@
     <p>
       <!-- use router-link component for navigation. -->
       <!-- specify the link by passing the `to` prop. -->
-      <router-link to="/impressum">Impressum</router-link>
+      <router-link to="/impressum">Impressum</router-link> 
+      <router-link to="/datenschutz">Datenschutz</router-link>
     </p>
   </div>
 </template>
@@ -61,5 +62,6 @@ p {
 a {
   font-size: 0.4em;
   color: #AAA;
+  margin-right: 5px;
 }
 </style>

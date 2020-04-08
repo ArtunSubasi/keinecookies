@@ -4,7 +4,6 @@
       <h1>Impressum</h1>
 
       <p>Artun Subasi<br/>
-      Artun Subasi Software<br/>
       Vorbergstr. 5<br/>
       76228 Karlsruhe<br/>
       Deutschland</p>
