@@ -11,13 +11,16 @@
       <p>Telefon: +49 151 554 79 199<br/>
       E-Mail: wirklich@keinecookies.de</p>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from './Footer.vue'
 export default {
   name: 'Impressum',
   components: {
+    Footer
   }
 }
 </script>

@@ -25,8 +25,4 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #222;
 }
-a {
-  font-size: 0.4em;
-  color: #AAA;
-}
 </style>

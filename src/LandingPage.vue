@@ -8,24 +8,21 @@
               Diese Seite verwendet<br/>
               <span class="warnung">KEINE</span> Cookies!<span class="hide">*</span>
             </p>
+            <Footer/>
         </div>
       </div>
     </div>
-    <p>
-      <!-- use router-link component for navigation. -->
-      <!-- specify the link by passing the `to` prop. -->
-      <router-link to="/impressum">Impressum</router-link> 
-      <router-link to="/datenschutz">Datenschutz</router-link>
-    </p>
   </div>
 </template>
 
 <script>
 require('typeface-open-sans')
+import Footer from './Footer.vue'
 
 export default {
   name: 'LandingPage',
   components: {
+    Footer
   }
 }
 </script>
@@ -58,10 +55,5 @@ p {
 }
 .hide {
   opacity: 40%;
-}
-a {
-  font-size: 0.4em;
-  color: #AAA;
-  margin-right: 5px;
 }
 </style>

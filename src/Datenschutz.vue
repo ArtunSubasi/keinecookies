@@ -43,13 +43,17 @@
       <p>Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.</p>
       <p class="quelle"><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from './Footer.vue'
+
 export default {
   name: 'Datenschutz',
   components: {
+    Footer
   }
 }
 </script>
