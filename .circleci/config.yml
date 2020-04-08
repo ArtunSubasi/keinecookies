@@ -23,7 +23,7 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - aws-s3/sync: # Invoke the sync command declared in the s3 orb
-          from: dist
+          from: /tmp/workspace/dist
           to: "s3://keinecookies.de"
           overwrite: true
 workflows:
