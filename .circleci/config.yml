@@ -13,7 +13,7 @@ jobs:
             - run: npm install
             - run: npm run build
             - persist_to_workspace:
-                root: $CIRCLE_WORKING_DIRECTORY
+                root: ~/
                 paths:
                   - dist
   deploy:
@@ -27,7 +27,7 @@ jobs:
           to: "s3://keinecookies.de"
           overwrite: true
 workflows:
-  build:
+  build-and-deploy:
     jobs:
       - build
       - deploy:
