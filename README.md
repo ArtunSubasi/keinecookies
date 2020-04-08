@@ -1,3 +1,5 @@
+[![CircleCI](https://img.shields.io/circleci/project/github/ArtunSubasi/keinecookies.svg)](https://circleci.com/gh/ArtunSubasi/keinecookies/tree/master)
+
 # keinecookies
 
 ## Project setup
