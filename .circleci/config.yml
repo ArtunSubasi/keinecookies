@@ -21,9 +21,9 @@ jobs:
       - image: cimg/python:3.6
     steps:
       - attach_workspace:
-          at: /bucket
+          at: /tmp/workspace
       - aws-s3/sync: # Invoke the sync command declared in the s3 orb
-          from: bucket
+          from: dist
           to: "s3://keinecookies.de"
           overwrite: true
 workflows:
