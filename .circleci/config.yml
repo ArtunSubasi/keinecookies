@@ -13,7 +13,7 @@ jobs:
             - run: npm install
             - run: npm run build
             - persist_to_workspace:
-                root: ~/
+                root: ~/project
                 paths:
                   - dist
   deploy:
