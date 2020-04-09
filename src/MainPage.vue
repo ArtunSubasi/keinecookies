@@ -1,33 +1,20 @@
 <template>
-  <div id="app">
+  <div id="MainPage">
     <div class="container">
-      <div id="warnung-box" class="row">
+      <div id="header" class="row">
         <div class="col-sm-12">
-            <div class="warnung header">Warnung!</div>
             <p>
-              Diese Seite verwendet<br/>
-              <span class="warnung">KEINE</span> Cookies!<span class="faded">*</span>
+              Du bekommst heute: TODO
             </p>        
         </div>
       </div>
-      <div id="buttons" class="container">
+      <div id="links" class="container">
         <div class="row">
-          <div class="mx-auto">
-              <div class="btn-toolbar">
-                <button class="btn btn-primary btn-lg btn-block">Ich stimme zu!</button>
-                <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="main-page">Ich stimme zu!</router-link>
-                <b-button class="btn-secondary btn-lg btn-block" to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
-              </div>
+          <div class="col-sm-6">
+            https://www.esentri.com
           </div>
-        </div>
-      </div>
-      <div id="disclaimer" class="container">
-        <div class="row">
-          <div class="mx-auto">
-            <p>
-            * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
-            keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
-            </p>
+          <div class="col-sm-6">
+            https://www.oekoside.de
           </div>
         </div>
       </div>
@@ -43,7 +30,7 @@ require('typeface-open-sans')
 import Footer from './Footer.vue'
 
 export default {
-  name: 'LandingPage',
+  name: 'MainPage',
   components: {
     Footer
   }
@@ -51,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
+#MainPage {
   text-align: center;
   display: flex;
   height: 100%;
@@ -72,7 +59,7 @@ export default {
     font-size: 5em;
   }
 }
-#warnung-box p {
+#header p {
   font-size: 2em;
   color: #f7ad3e;
 }
@@ -86,7 +73,7 @@ export default {
   color: #777;
 }
 .btn-primary {
-  background-color: #bbad97;
+  background-color: #f7ad3e;
   color: #222;
   border-color: #000;
   font-weight: bold;

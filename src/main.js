@@ -6,6 +6,7 @@ import LandingPage from './LandingPage.vue'
 import Impressum from './Impressum.vue'
 import Datenschutz from './Datenschutz.vue'
 import CookieAuswahl from './CookieAuswahl.vue'
+import MainPage from './MainPage.vue'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,7 +25,8 @@ const routes = [
   { path: '/', component: LandingPage },
   { path: '/impressum', component: Impressum },
   { path: '/datenschutz', component: Datenschutz },
-  { path: '/cookie-auswahl', component: CookieAuswahl }
+  { path: '/cookie-auswahl', component: CookieAuswahl },
+  { path: '/main-page', component: MainPage }
 ]
 
 // 3. Create the router instance and pass the `routes` option
