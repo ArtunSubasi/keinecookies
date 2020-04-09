@@ -13,6 +13,7 @@ module.exports = {
 
 <style scoped>
 #footer {
+  margin: 20px;
   text-align: center;
 }
 a {

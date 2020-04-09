@@ -18,8 +18,6 @@ export default {
 
 <style>
 html, body {
-  margin: 0;
-  padding: 0;
   font-family: "Open Sans", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

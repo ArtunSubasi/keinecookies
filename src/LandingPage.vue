@@ -6,10 +6,32 @@
             <div class="warnung header">Warnung!</div>
             <p>
               Diese Seite verwendet<br/>
-              <span class="warnung">KEINE</span> Cookies!<span class="hide">*</span>
-            </p>
-            <Footer/>
+              <span class="warnung">KEINE</span> Cookies!<span class="faded">*</span>
+            </p>        
         </div>
+      </div>
+      <div id="buttons" class="container">
+        <div class="row">
+          <div class="mx-auto">
+              <div class="btn-toolbar">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Ich stimme zu!</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Ich wollte aber doch Cookies :(</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="disclaimer" class="container">
+        <div class="row">
+          <div class="mx-auto">
+            <p>
+            * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
+            keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <Footer/>
       </div>
     </div>
   </div>
@@ -49,11 +71,37 @@ export default {
     font-size: 5em;
   }
 }
-p {
+#warnung-box p {
   font-size: 2em;
   color: #f7ad3e;
 }
-.hide {
-  opacity: 40%;
+.faded {
+  color: #777;
+}
+#disclaimer {
+  margin: 20px;
+  text-align: left;
+  font-size: 0.8em;
+  color: #777;
+}
+.btn-primary {
+  background-color: #f7ad3e;
+  color: #222;
+  border-color: #000;
+  font-weight: bold;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #e98c00;
+  border-color: #db1f1f;
+}
+.btn-secondary {
+ background-color: #777;
+ color: #222;
+ border-color: #000;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary {
+  color: #fff;
+  border-color: #f7ad3e;
 }
 </style>
