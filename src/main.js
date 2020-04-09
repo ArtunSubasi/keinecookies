@@ -5,6 +5,7 @@ import App from './App.vue'
 import LandingPage from './LandingPage.vue'
 import Impressum from './Impressum.vue'
 import Datenschutz from './Datenschutz.vue'
+import CookieAuswahl from './CookieAuswahl.vue'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -22,7 +23,8 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', component: LandingPage },
   { path: '/impressum', component: Impressum },
-  { path: '/datenschutz', component: Datenschutz }
+  { path: '/datenschutz', component: Datenschutz },
+  { path: '/cookie-auswahl', component: CookieAuswahl }
 ]
 
 // 3. Create the router instance and pass the `routes` option

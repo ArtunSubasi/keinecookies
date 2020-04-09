@@ -1,6 +1,7 @@
 <template>
   <div id="footer">
     <router-link to="/" exact>Startseite</router-link>
+    <router-link to="/cookie-auswahl">Cookie-Auswahl</router-link>
     <router-link to="/impressum">Impressum</router-link>
     <router-link to="/datenschutz">Datenschutz</router-link>
   </div>

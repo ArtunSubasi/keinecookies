@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
+  <div id="CookieAuswahl">
     <div class="container">
-      <div id="warnung-box" class="row">
+      <div id="header" class="row">
         <div class="col-sm-12">
-            <div class="warnung header">Warnung!</div>
             <p>
-              Diese Seite verwendet<br/>
-              <span class="warnung">KEINE</span> Cookies!<span class="faded">*</span>
+              Was für Cookies möchtest du?<span class="faded">*</span>
             </p>        
         </div>
       </div>
@@ -14,8 +12,10 @@
         <div class="row">
           <div class="mx-auto">
               <div class="btn-toolbar">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Ich stimme zu!</button>
-                <b-button class="btn-secondary btn-lg btn-block" to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Chocolate Chips Cookies</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Peanut Butter Cookies</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Ich möchte doch keine Cookies</button>
+                <b-button class="btn-secondary btn-lg btn-block" to="/">Ich wollte aber Cookies mit echten Cookies</b-button>
               </div>
           </div>
         </div>
@@ -24,8 +24,7 @@
         <div class="row">
           <div class="mx-auto">
             <p>
-            * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
-            keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
+            * Mir ist klar, dass meine Cookie-Auswahl ohne Cookies gespeichert und beim nächsten Besuch dieser Seite verloren gehen wird.
             </p>
           </div>
         </div>
@@ -42,7 +41,7 @@ require('typeface-open-sans')
 import Footer from './Footer.vue'
 
 export default {
-  name: 'LandingPage',
+  name: 'CookieAuswahl',
   components: {
     Footer
   }
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
+#CookieAuswahl {
   text-align: center;
   display: flex;
   height: 100%;
@@ -71,7 +70,7 @@ export default {
     font-size: 5em;
   }
 }
-#warnung-box p {
+#header p {
   font-size: 2em;
   color: #f7ad3e;
 }
