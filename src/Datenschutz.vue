@@ -41,6 +41,10 @@
           <li>IP-Adresse</li>
       </ul>
       <p>Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.</p>
+
+      <h3>Links zu Drittseiten</h3>
+      <p>Beim Besuch der Webseite könnten Inhalte angezeigt werden, die mit den Webseiten Dritter verlinkt sind. Der Betreiber hat keinen Zugang zu den Cookies oder anderen Funktionen, die von Drittseiten eingesetzt werden, noch kann der Betreiber diese kontrollieren. Solche Drittseiten unterliegen nicht den Datenschutzbestimmungen des Betreibers.</p>
+
       <p class="quelle"><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
     </div>
     <Footer/>

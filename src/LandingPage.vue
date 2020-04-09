@@ -3,10 +3,10 @@
     <div class="container">
       <div id="warnung-box" class="row">
         <div class="col-sm-12">
-            <div class="warnung header">Warnung!</div>
+            <div class="warnung header">{{ headerText }}</div>
             <p>
               Diese Seite verwendet<br/>
-              <span class="warnung">KEINE</span> Cookies!<span class="faded">*</span>
+              <span class="warnung">{{ negationText }}</span> Cookies!<span class="faded">*</span>
             </p>        
         </div>
       </div>
@@ -14,9 +14,8 @@
         <div class="row">
           <div class="mx-auto">
               <div class="btn-toolbar">
-                <button class="btn btn-primary btn-lg btn-block">Ich stimme zu!</button>
-                <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="main-page">Ich stimme zu!</router-link>
-                <b-button class="btn-secondary btn-lg btn-block" to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
+                <b-button variant="primary" size="lg" block to="wirklich-keine-cookies">Ich stimme zu!</b-button>
+                <b-button variant="secondary" size="lg" block to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
               </div>
           </div>
         </div>
@@ -44,6 +43,16 @@ import Footer from './Footer.vue'
 
 export default {
   name: 'LandingPage',
+  props: {
+    headerText: {
+      type: String,
+      default: 'Warnung!'
+    },
+    negationText: {
+      type: String,
+      default: 'KEINE'
+    }
+  },
   components: {
     Footer
   }
@@ -86,7 +95,7 @@ export default {
   color: #777;
 }
 .btn-primary {
-  background-color: #bbad97;
+  background-color: #f7ad3e;
   color: #222;
   border-color: #000;
   font-weight: bold;

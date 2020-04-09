@@ -12,10 +12,10 @@
         <div class="row">
           <div class="mx-auto">
               <div class="btn-toolbar">
-                <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="main-page">Chocolate Chips Cookies</router-link>
-                <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="main-page">Peanut Butter Cookies</router-link>
-                <router-link tag="button" class="btn btn-secondary btn-lg btn-block" to="main-page">Ich möchte doch keine Cookies</router-link>
-                <router-link tag="button" class="btn btn-secondary btn-lg btn-block" to="/">Ich wollte aber Cookies mit echten Cookies</router-link>
+                <b-button variant="primary" size="lg" block to="chocolate-chip-cookies">Chocolate Chip Cookies</b-button>
+                <b-button variant="primary" size="lg" block to="peanut-butter-cookies">Peanut Butter Cookies</b-button>
+                <b-button variant="secondary" size="lg" block to="wirklich-keine-cookies">Ich möchte doch keine Cookies</b-button>
+                <b-button variant="secondary" size="lg" block to="cookies-mit-echten-cookies">Ich wollte aber Cookies mit echten Cookies</b-button>
               </div>
           </div>
         </div>
