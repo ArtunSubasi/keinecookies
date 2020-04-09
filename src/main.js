@@ -28,7 +28,7 @@ const routes = [
   { path: '/datenschutz', component: Datenschutz },
   { path: '/cookie-auswahl', component: CookieAuswahl },
   { path: '/chocolate-chip-cookies', component: MainPage, props: { cookieType: 'ChocolateChip' } },
-  { path: '/peanut-butter-cookies', component: MainPage, props: { cookieType: 'PeanutButter' } },
+  { path: '/macarons', component: MainPage, props: { cookieType: 'Macarons' } },
   { path: '/wirklich-keine-cookies', component: MainPage }
 ]
 
