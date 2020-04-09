@@ -28,6 +28,9 @@ export default {
 <style scoped>
 #impressum {
   background-color: #222;
+  color: #ccc;
+}
+h1,h2,h3 {
   color: #f7ad3e;
 }
 </style>
