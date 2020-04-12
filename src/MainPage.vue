@@ -17,7 +17,7 @@
             Du lebst sehr gesund und hast einen eisernen Wille! Gleichzeitig ist es traurig, dass du keine Cookies bekommen hast. 
             Denn Cookies sind super lecker.
             Als Trotz kannst du dir gerne die unten aufgelisteten wunderbaren Websites anschauen, die Cookies verwenden.
-            Falls du doch Cookies möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten links ändern.
+            Falls du doch Cookies möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten rechts ändern.
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
           <div class="mx-auto introduction">
             Super Auswahl! Chocolate Chip Cookies sind super lecker!
             Du kannst dir gerne die unten aufgelisteten wunderbaren Websites anschauen, da du Cookies magst. Sie verwenden nämlich Cookies.
-            Falls du doch keine Cookies mehr möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten links ändern.
+            Falls du doch keine Cookies mehr möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten rechts ändern.
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
           <div class="mx-auto introduction">
             Super Auswahl! Macarons sind super lecker!
             Du kannst dir gerne die unten aufgelisteten wunderbaren Websites anschauen, da du Cookies magst. Sie verwenden nämlich Cookies.
-            Falls du doch keine Cookies mehr möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten links ändern.
+            Falls du doch keine Cookies mehr möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten rechts ändern.
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://unverpackt-versand.de/">
-                  <img src="./assets/KK_UO-Gruen_250x.png" class="resize" alt="delete"/>
+                  <img src="./assets/KK_UO-Gruen_250x.png" class="resize" alt="Kornkiste"/>
                 </a>
               </div>
               <div class="col-sm-12 mt-2">
@@ -147,6 +147,7 @@
       </div>
       <div class="container">
         <Footer/>
+        <CookieBox/>
       </div>
     </div>
   </div>
@@ -155,6 +156,7 @@
 <script>
 require('typeface-open-sans')
 import Footer from './Footer.vue'
+import CookieBox from './CookieBox.vue'
 
 export default {
   name: 'MainPage',
@@ -165,7 +167,8 @@ export default {
     }
   },
   components: {
-    Footer
+    Footer,
+    CookieBox
   }
 }
 </script>
