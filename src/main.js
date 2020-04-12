@@ -6,6 +6,7 @@ import LandingPage from './LandingPage.vue'
 import Impressum from './Impressum.vue'
 import Datenschutz from './Datenschutz.vue'
 import Paq from './Paq.vue'
+import Kontakt from './Kontakt.vue'
 import CookieAuswahl from './CookieAuswahl.vue'
 import MainPage from './MainPage.vue'
 
@@ -28,6 +29,7 @@ const routes = [
   { path: '/impressum', component: Impressum },
   { path: '/datenschutz', component: Datenschutz },
   { path: '/paq', component: Paq },
+  { path: '/kontakt', component: Kontakt },
   { path: '/cookie-auswahl', component: CookieAuswahl },
   { path: '/chocolate-chip-cookies', component: MainPage, props: { cookieType: 'ChocolateChip' } },
   { path: '/macarons', component: MainPage, props: { cookieType: 'Macarons' } },
