@@ -2,7 +2,7 @@
   <div id="MainPage">
     <div class="container">
 
-      <div id="header" class="row" v-if="cookieType == 'WirklichKeineCookies'">
+      <div class="row header" v-if="cookieType == 'WirklichKeineCookies'">
         <div class="col-sm-12">
           <p>Du bekommst keine Cookies!</p>
         </div>
@@ -12,7 +12,7 @@
         <div class="mx-auto m-3 photo-credits">
           Photo by <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@chaib2?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from chaitanya pillala"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">chaitanya pillala</span></a>
         </div>
-        <div class="row mt-3">
+        <div class="col-sm-12 mt-3">
           <div class="mx-auto introduction">
             Du lebst sehr gesund und hast einen eisernen Wille! Gleichzeitig ist es traurig, dass du keine Cookies bekommen hast. 
             Denn Cookies sind super lecker.
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div id="header" class="row" v-if="cookieType == 'ChocolateChip'">
+      <div class="row header" v-if="cookieType == 'ChocolateChip'">
         <div class="col-sm-12">
           <p>Du bekommst Chocolate Chip Cookies! Yay!</p>
         </div>
@@ -32,7 +32,7 @@
         <div class="mx-auto m-3 photo-credits">
           Photo by <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@johnnyd0805?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from John Dancy"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">John Dancy</span></a>
         </div>
-        <div class="row mt-3">
+        <div class="col-sm-12 mt-3">
           <div class="mx-auto introduction">
             Super Auswahl! Chocolate Chip Cookies sind super lecker!
             Du kannst dir gerne die unten aufgelisteten wunderbaren Websites anschauen, da du Cookies magst. Sie verwenden nämlich Cookies.
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div id="header" class="row" v-if="cookieType == 'Macarons'">
+      <div class="row header" v-if="cookieType == 'Macarons'">
         <div class="col-sm-12">
           <p>Du bekommst Macarons! Yay!</p>
         </div>
@@ -51,7 +51,7 @@
         <div class="mx-auto m-3 photo-credits">
           Photo by <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@holly_buildalifeyoulove?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Holly Stratton"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Holly Stratton</span></a>
         </div>
-        <div class="row mt-3">
+        <div class="col-sm-12 mt-3">
           <div class="mx-auto introduction">
             Super Auswahl! Macarons sind super lecker!
             Du kannst dir gerne die unten aufgelisteten wunderbaren Websites anschauen, da du Cookies magst. Sie verwenden nämlich Cookies.
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-sm-6 mt-2">
             <div class="row">
-              <div class="col-sm-12 mt-3">
+              <div class="col-sm-12 mt-5">
                 <a href="https://www.esentri.com">
                   <img src="./assets/esentri_weiß-gruen.png" class="resize" alt="esentri AG"/>
                 </a>
@@ -78,7 +78,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 mt-2">
+          <div class="col-sm-6 mt-5">
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://unverpackt-versand.de/">
@@ -96,12 +96,12 @@
           </div>    
         </div>
         <div class="row mt-5">
-          <div class="mx-auto">
-            Die folgenden Websites sind praktisch Cookie-frei<span class="faded">*</span> und auf jeden Fall einen Besuch wert!
+          <div class="mx-auto subheader">
+            <p>Die folgenden Websites sind praktisch Cookie-frei<span class="faded">*</span> und auf jeden Fall einen Besuch wert!</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6 mt-4">
+          <div class="col-sm-6 mt-5">
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://www.i-dont-care-about-cookies.eu/de">
@@ -117,7 +117,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 mt-4">
+          <div class="col-sm-6 mt-5">
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://www.oekoside.de">
@@ -183,8 +183,12 @@ export default {
   flex-direction: column;
   background-color: #222;
 }
-#header p {
+.header p {
   font-size: 2em;
+  color: #f7ad3e;
+}
+.subheader p {
+  font-size: 1.6em;
   color: #f7ad3e;
 }
 #links, .introduction {
