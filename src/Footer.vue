@@ -2,6 +2,7 @@
   <div id="footer">
     <router-link to="/" exact>Startseite</router-link>
     <router-link to="/paq">PAQ</router-link>
+    <a href="https://github.com/ArtunSubasi/keinecookies">GitHub</a>
     <br/>
     <router-link to="/impressum">Impressum</router-link>
     <router-link to="/datenschutz">Datenschutz</router-link>
