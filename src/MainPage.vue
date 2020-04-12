@@ -14,7 +14,7 @@
         </div>
         <div class="col-sm-12 mt-3">
           <div class="mx-auto introduction">
-            Du lebst sehr gesund und hast einen eisernen Wille! Gleichzeitig ist es traurig, dass du keine Cookies bekommen hast. 
+            Du lebst sehr gesund und hast einen eisernen Willen! Gleichzeitig ist es traurig, dass du keine Cookies bekommen hast. 
             Denn Cookies sind super lecker.
             Als Trotz kannst du dir gerne die unten aufgelisteten wunderbaren Websites anschauen, die Cookies verwenden.
             Falls du doch Cookies möchtest, kannst du deine Cookie-Auswahl übrigens jederzeit mit dem Cookie-Icon unten rechts ändern.
