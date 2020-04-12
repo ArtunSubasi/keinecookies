@@ -9,6 +9,33 @@
         Da die Webseit erst im April 2020 veröffentlicht wurde und noch keiner Fragen gestellt hat, wäre eine FAQ nicht ehrlich gewesen.
       </p>
 
+      <h2>Wieso gibt es diese Website?</h2>
+      <p>
+        Es gibt viel zu viele Websites, die uns unnötig mit Cookie-Hinweisen bombardieren, weil sie Cookies verwenden.
+        Ich wollte endlich eine Website, die uns unnötig mit einem Cookie-Hinweis bombardiert, weil sie keine Cookies verwendet.
+        Die Idee dieser Webseite entstand Anfang April 2020 während der Corona-Ausgangsperre in Karlsruhe.
+      </p>
+      <p>
+        Ich habe mich in der Zeit tiefer in <a href="https://aws.amazon.com/de/">Amazon Web Services (AWS)</a> eingearbeitet, 
+        mich als <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2020-03-31&ci=AWS01353022&dm=80">AWS Certified Cloud Practitioner</a> 
+        zertifizieren lassen, wollte das frisch gelernte einsetzen und dabei neue Frameworks sowie Tools lernen. Diese Website wird in AWS betrieben.
+        Diese Website ist übrigens open source und in <a href="https://github.com/ArtunSubasi/keinecookies">GitHub</a> zu finden.
+      </p>
+
+      <h2>Wie machst du mit dieser Website Geld?</h2>
+      <p>
+        Gar nicht. Von den verlinkten Websites in der Hauptseite bekomme ich keine Provision oder ähnliches.
+        <a href="https://www.oekoside.de">oekoside.de</a> und die <a href="https://unverpackt-versand.de/">Kornkiste</a> habe ich verlinkt, 
+        weil mir die Umwelt wichtig ist und ich der Meinung, dass die beiden Seiten sehr lobenswert sind.
+      </p>
+      <p>
+        <a href="https://www.esentri.com/blog">esentri Blog</a> habe ich verlinkt, da ich die Blog-Artikel lesenswert finde 
+        und von <a href="https://www.esentri.com/blog">esentri</a> als Arbeitgeber sehr begeistert bin.
+        Fallst du übrigens zufällig (oder auch nicht zufällig) auch ein(e) neugierige(r) Informatiker(in) bist: 
+        wir suchen bei <a href="https://www.esentri.com/blog">esentri</a> Mitstreiter!
+        Ich freue mich diesbezüglich über Kontaktanfragen.
+      </p>
+
       <h2>Sind Macarons Cookies?</h2>
       <p>
         Laut <a href="https://en.wikipedia.org/wiki/Cookie">Wikipedia</a> wird ein Cookie beschrieben als: 
@@ -19,28 +46,6 @@
         dass Macarons aus zwei Cookie-Teilen bestehen.
         <a href="https://www.quora.com/Is-a-macaroon-a-cookie">In einer Diskussion in Quora</a> gibt es unterschiedliche Meinungen dazu.
         Was ist deine Meinung?
-      </p>
-
-      <h2>Wieso gibt es diese Website?</h2>
-      <p>
-        Es gibt viel zu viele Websites, die uns unnötig mit Cookie-Hinweisen bombardieren, weil sie Cookies verwenden.
-        Ich wollte endlich eine Website, die uns unnötig mit einem Cookie-Hinweis bombardiert, weil sie keine Cookies verwendet.
-        Die Idee dieser Webseite entstand Anfang April 2020 während der Corona-Ausgangsperre in Karlsruhe.
-        Ich habe mich in der Zeit tiefer in <a href="https://aws.amazon.com/de/">Amazon Web Services (AWS)</a> eingearbeitet, 
-        mich als <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2020-03-31&ci=AWS01353022&dm=80">AWS Certified Cloud Practitioner</a> 
-        zertifizieren lassen, wollte das frisch gelernte einsetzen und dabei neue Frameworks sowie Tools lernen. Diese Website wird in AWS betrieben.
-      </p>
-
-      <h2>Wie machst du mit dieser Website Geld?</h2>
-      <p>
-        Gar nicht. Diese Website wird in <a href="https://aws.amazon.com/de/free/">AWS Free Tier</a> gehostet.
-        Von den verlinkten Websites in der Hauptseite bekomme ich keine Provision oder ähnliches.
-        <a href="https://www.oekoside.de">oekoside.de</a> und die <a href="https://unverpackt-versand.de/">Kornkiste</a> habe ich verlinkt, 
-        weil mir die Umwelt wichtig ist und ich der Meinung, dass die beiden Seiten sehr lobenswert sind.
-        <a href="https://www.esentri.com/blog">esentri Blog</a> habe ich verlinkt, da ich die Blog-Artikel lesenswert finde.
-        Fallst du übrigens zufällig (oder auch nicht zufällig) auch ein(e) neugierige(r) Informatiker(in) bist: 
-        wir suchen bei <a href="https://www.esentri.com/blog">esentri</a> Mitstreiter!
-        Ich freue mich diesbezüglich über Fragen.
       </p>
     </div>
     <Footer/>
