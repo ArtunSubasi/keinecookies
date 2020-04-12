@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 #impressum {
+  text-align: center;
   background-color: #222;
   color: #ccc;
 }
