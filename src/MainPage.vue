@@ -66,7 +66,7 @@
             <div class="row">
               <div class="col-sm-12 mt-5">
                 <a href="https://www.esentri.com">
-                  <img src="./assets/esentri_weiß-gruen.png" class="resize" alt="esentri AG"/>
+                  <img src="./assets/esentri_weiß-gruen.png" alt="esentri AG"/>
                 </a>
               </div>
               <div class="col-sm-12">
@@ -82,7 +82,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://unverpackt-versand.de/">
-                  <img src="./assets/KK_UO-Gruen_250x.png" class="resize" alt="Kornkiste"/>
+                  <img src="./assets/KK_UO-Gruen_250x.png" alt="Kornkiste"/>
                 </a>
               </div>
               <div class="col-sm-12">
@@ -105,7 +105,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://www.i-dont-care-about-cookies.eu/de">
-                  <img src="./assets/u-j-e-s-h-7ySd00IGyx4-unsplash-smaller.jpg" class="resize" alt="delete"/>
+                  <img src="./assets/u-j-e-s-h-7ySd00IGyx4-unsplash-smaller.jpg" alt="delete"/>
                 </a>
               </div>
               <div class="col-sm-12">
@@ -121,7 +121,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://www.oekoside.de">
-                  <img src="./assets/dhruva-reddy-7NepJK9k8eM-unsplash-supersmall.jpg" class="resize" alt="eokoside.de"/>
+                  <img src="./assets/dhruva-reddy-7NepJK9k8eM-unsplash-supersmall.jpg" alt="eokoside.de"/>
                 </a>
               </div>
               <div class="col-sm-12">
@@ -202,10 +202,6 @@ a {
 .photo-credits {
   font-size: 0.8em;
   color: #ccc;
-}
-img.resize {
-  max-width: 100%;
-  max-height: 100%;
 }
 .faded {
   color: #777;
