@@ -69,12 +69,12 @@
                   <img src="./assets/esentri_weiß-gruen.png" class="resize" alt="esentri AG"/>
                 </a>
               </div>
+              <div class="col-sm-12">
+                <a href="https://www.esentri.com/blog">esentri Blog</a>
+              </div>
               <div class="col-sm-12 mt-2">
                 IT-Blog für Neugierige: Meine Kollegen (und manchmal auch ich) schreiben im esentri Blog über alles, was uns bewegt.
                 Unser Antrieb ist die Neugier auf Veränderungen, mit der wir gerne auch mal über den Tellerrand schauen.
-              </div>
-              <div class="col-sm-12">
-                <a href="https://www.esentri.com/blog">esentri Blog</a>
               </div>
             </div>
           </div>
@@ -85,12 +85,12 @@
                   <img src="./assets/KK_UO-Gruen_250x.png" class="resize" alt="Kornkiste"/>
                 </a>
               </div>
+              <div class="col-sm-12">
+                <a href="https://unverpackt-versand.de/">Kornkiste - Unverpackt-Online</a>
+              </div>
               <div class="col-sm-12 mt-2">
                 Unverpackt für alle! Unverpackt online kaufen... wie soll das gehen? Geht auch nicht. 
                 Hier kann man mit einem Mehrweg-System den Einkauf ohne Verpackungsmüll direkt nach Hause versenden und Müll vermeiden.
-              </div>
-              <div class="col-sm-12">
-                <a href="https://unverpackt-versand.de/">Kornkiste - Unverpackt-Online</a>
               </div>
             </div>
           </div>    
@@ -108,12 +108,12 @@
                   <img src="./assets/u-j-e-s-h-7ySd00IGyx4-unsplash-smaller.jpg" class="resize" alt="delete"/>
                 </a>
               </div>
-              <div class="col-sm-12 mt-2">
-                Entfernt Cookie-Warnungen von fast allen Websites!<br/>
-                Diese Browser-Erweiterung entfernt Cookie-Warnungen von fast allen Websites und erspart dir Tausende unnötiger Klicks!
-              </div>
               <div class="col-sm-12">
                 <a href="https://www.i-dont-care-about-cookies.eu/de">I don't care</a>
+              </div>
+              <div class="col-sm-12 mt-2">
+                Die Browser-Erweiterung "I don't care about cookies" entfernt Cookie-Warnungen von fast allen Websites 
+                und erspart dir Tausende unnötiger Klicks!
               </div>
             </div>
           </div>
@@ -124,12 +124,12 @@
                   <img src="./assets/dhruva-reddy-7NepJK9k8eM-unsplash-supersmall.jpg" class="resize" alt="eokoside.de"/>
                 </a>
               </div>
+              <div class="col-sm-12">
+                <a href="https://www.oekoside.de">oekoside.de</a>
+              </div>
               <div class="col-sm-12 mt-2">
                 Ökotipps für alle! Der Autor Thomas Winterhalter sammelt konkrete Möglichkeiten, 
                 was jeder zum Schutz der Umwelt beitragen kann. Und nein: vieles ist nicht schwierig sondern oft erschreckend einfach!
-              </div>
-              <div class="col-sm-12">
-                <a href="https://www.oekoside.de">oekoside.de</a>
               </div>
             </div>
           </div>
