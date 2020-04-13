@@ -23,6 +23,7 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - aws-s3/sync: # Invoke the sync command declared in the s3 orb
+          arguments: --cache-control "max-age=604800"
           from: /tmp/workspace/dist
           to: "s3://keinecookies.de"
           overwrite: true
