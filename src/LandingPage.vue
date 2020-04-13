@@ -10,8 +10,8 @@
             </p>        
         </div>
       </div>
-      <div id="buttons" class="container">
-        <div class="row">
+      <div  class="container">
+        <div id="buttons" class="row">
           <div class="mx-auto">
               <div class="btn-toolbar">
                 <b-button variant="primary" size="lg" block to="wirklich-keine-cookies">Ich stimme zu!</b-button>
@@ -20,19 +20,15 @@
           </div>
         </div>
       </div>
-      <div id="disclaimer" class="container">
-        <div class="row">
-          <div class="mx-auto">
-            <p>
-            * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
-            keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
-            </p>
-          </div>
+      <div id="disclaimer" class="row">
+        <div class="mx-auto">
+          <p>
+          * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
+          keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
+          </p>
         </div>
       </div>
-      <div class="container">
-        <Footer/>
-      </div>
+      <Footer/>
     </div>
   </div>
 </template>

@@ -20,18 +20,14 @@
           </div>
         </div>
       </div>
-      <div id="disclaimer" class="container">
-        <div class="row">
-          <div class="mx-auto">
-            <p>
-            * Mir ist klar, dass meine Cookie-Auswahl ohne Cookies gespeichert und beim nächsten Besuch dieser Seite verloren gehen wird.
-            </p>
-          </div>
+      <div id="disclaimer" class="row">
+        <div class="mx-auto">
+          <p>
+          * Mir ist klar, dass meine Cookie-Auswahl ohne Cookies gespeichert und beim nächsten Besuch dieser Seite verloren gehen wird.
+          </p>
         </div>
       </div>
-      <div class="container">
-        <Footer/>
-      </div>
+      <Footer/>
     </div>
   </div>
 </template>

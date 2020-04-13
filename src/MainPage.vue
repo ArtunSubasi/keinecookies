@@ -135,20 +135,16 @@
           </div>
         </div>
       </div>
-      <div id="disclaimer" class="container">
-        <div class="row">
-          <div class="mx-auto">
-            <p>
-            * Praktisch Cookie-frei: Die Websites scheinen entweder keine Cookies oder wenig Cookies zu verwenden und kommen ohne einen Cookie-Hinweis zurecht.
-            Ich prüfe die Cookie-Verwendung in den Drittwebsites nicht. Deshalb gilt: Praktisch Cookie-frei ohne Gewähr.
-            </p>
-          </div>
+      <div id="disclaimer" class="row">
+        <div class="mx-auto">
+          <p>
+          * Praktisch Cookie-frei: Die Websites scheinen entweder keine Cookies oder wenig Cookies zu verwenden und kommen ohne einen Cookie-Hinweis zurecht.
+          Ich prüfe die Cookie-Verwendung in den Drittwebsites nicht. Deshalb gilt: Praktisch Cookie-frei ohne Gewähr.
+          </p>
         </div>
       </div>
-      <div class="container">
-        <Footer/>
-        <CookieBox/>
-      </div>
+      <Footer/>
+      <CookieBox/>
     </div>
   </div>
 </template>
@@ -190,6 +186,13 @@ export default {
 .subheader p {
   font-size: 1.6em;
   color: #f7ad3e;
+}
+img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 #links, .introduction {
   font-size: 1em;
