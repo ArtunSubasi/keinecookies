@@ -82,7 +82,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <a href="https://unverpackt-versand.de/">
-                  <img src="./assets/KK_UO-Gruen_250x.png" alt="Kornkiste"/>
+                  <img src="./assets/Kornkiste.png" alt="Kornkiste"/>
                 </a>
               </div>
               <div class="col-sm-12">
