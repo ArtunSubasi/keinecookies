@@ -3,11 +3,11 @@
     <div class="container">
       <div id="warnung-box" class="row">
         <div class="col-sm-12">
-            <div class="warnung header">{{ headerText }}</div>
-            <p>
+            <div class="warnung"><h1>{{ headerText }}</h1></div>
+            <h2>
               Diese Seite verwendet<br/>
               <span class="warnung">{{ negationText }}</span> Cookies!<span class="faded">*</span>
-            </p>        
+            </h2>        
         </div>
       </div>
       <div  class="container">
@@ -69,15 +69,15 @@ export default {
   color: #db1f1f;
   font-weight: bold;
 }
-.header {
+h1 {
   font-size: 3em;
 }
 @media(min-width:576px) {
-  .header {
+  h1 {
     font-size: 5em;
   }
 }
-#warnung-box p {
+h2 {
   font-size: 2em;
   color: #f7ad3e;
 }
