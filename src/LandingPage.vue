@@ -24,7 +24,7 @@
         <div class="mx-auto">
           <p>
           * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
-          keine Marketing-Cookies, keine Cookies für Partnerschaften oder ähnliches. Keine Cookies halt.
+          keine Marketing-Cookies, keine Cookies für Partnerschaften o.ä. Keine Cookies halt.
           </p>
         </div>
       </div>
