@@ -26,7 +26,7 @@
       <p>
         Gar nicht. Von den verlinkten Websites in der Hauptseite bekomme ich keine Provision oder ähnliches.
         <a href="https://www.oekoside.de">oekoside.de</a> und die <a href="https://unverpackt-versand.de/">Kornkiste</a> habe ich verlinkt, 
-        weil mir die Umwelt wichtig ist und ich der Meinung, dass die beiden Seiten sehr lobenswert sind.
+        weil mir die Umwelt wichtig ist und ich der Meinung bin, dass die beiden Seiten sehr lobenswert sind.
       </p>
       <p>
         <a href="https://www.esentri.com/blog">esentri Blog</a> habe ich verlinkt, da ich die Blog-Artikel lesenswert finde 
@@ -41,7 +41,7 @@
         Laut <a href="https://en.wikipedia.org/wiki/Cookie">Wikipedia</a> wird ein Cookie beschrieben als: 
         <strike>eine Textinformation, die im Browser auf dem Computer</strike> 
         <i> a baked or cooked food that is typically small, flat and sweet</i>.
-        Das hört zuerst danach an, aber so flach sind Macarons auch nicht.
+        Das hört sich zuerst danach an, aber so flach sind Macarons auch nicht.
         Wiederum steht in der <a href="https://en.wikipedia.org/wiki/Macaron">Wikipedia-Beschreibung der Macarons</a>, 
         dass Macarons aus zwei Cookie-Teilen bestehen.
         <a href="https://www.quora.com/Is-a-macaroon-a-cookie">In einer Diskussion in Quora</a> gibt es unterschiedliche Meinungen dazu.
