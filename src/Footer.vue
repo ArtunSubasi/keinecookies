@@ -2,7 +2,7 @@
   <div id="footer">
     <router-link to="/" exact>Startseite</router-link>
     <router-link to="/paq">PAQ</router-link>
-    <router-link to="/techStack">Tech Stack</router-link>
+    <a href="https://stackshare.io/ArtunSubasi/keinecookies-de">Tech Stack</a>
     <a href="https://github.com/ArtunSubasi/keinecookies">GitHub</a>
     <br/>
     <router-link to="/kontakt">Kontakt</router-link>

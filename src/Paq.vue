@@ -19,6 +19,12 @@
         Ich habe mich in der Zeit tiefer in <a href="https://aws.amazon.com/de/">Amazon Web Services (AWS)</a> eingearbeitet, 
         mich als <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2020-03-31&ci=AWS01353022&dm=80">AWS Certified Cloud Practitioner</a> 
         zertifizieren lassen, wollte das frisch gelernte einsetzen und dabei neue Frameworks sowie Tools lernen. Diese Website wird in AWS betrieben.
+        Siehe auch <a href="https://stackshare.io/ArtunSubasi/keinecookies-de">Tech Stack</a>.</p>
+      <p>
+        Fun Fact: Die <a href="https://stackshare.io/ArtunSubasi/keinecookies-de">Tech Stack</a>-Seite war am Anfang als eingebettet 
+        und hat auch schön ausgesehen.
+        Leider hat <a href="https://stackshare.io">Stackshare</a> beim einbetten ironischerweise tonnenweise Cookies geschrieben. 
+        Deshalb ist es nun nur verlinkt.
         Diese Website ist übrigens open source und in <a href="https://github.com/ArtunSubasi/keinecookies">GitHub</a> zu finden.
       </p>
 
