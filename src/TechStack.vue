@@ -4,9 +4,7 @@
       <h1>Tech Stack</h1>
       <p>Auch für keine Cookies braucht man ein Tech Stack. 
         Diese Seite ist für alle IT-interessierte adressiert und zeigt eine Übersicht des genutzten Tech Stacks.</p>
-      <a frameborder="2" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" 
-          href="https://embed.stackshare.io/stacks/embed/de7e4a1814d141d1f8338893ca2edd"/>    
-
+      <p>In Arbeit...</p>
     </div>
     <Footer/>
   </div>
@@ -19,13 +17,7 @@ export default {
   name: 'TechStack',
   components: {
     Footer
-  },
-  mounted() {
-      let stackshareClientScript = document.createElement('script')
-      stackshareClientScript.setAttribute('src', 'https://cdn1.stackshare.io/javascripts/client-code.js')
-      stackshareClientScript.setAttribute('charset', 'utf-8')
-      document.head.appendChild(stackshareClientScript)
-    }
+  }
 }
 </script>
 
