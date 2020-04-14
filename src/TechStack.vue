@@ -2,8 +2,8 @@
   <div id="techStack">
     <div class="container">
       <h1>Tech Stack</h1>
-      <p>Auch für keine Cookies braucht man ein Tech Stack.<br/>
-      Diese Seite ist für alle IT-interessierte adressiert und zeigt eine Übersicht des genutzten Tech Stacks.</p>
+      <p>Auch für keine Cookies braucht man ein Tech Stack. 
+        Diese Seite ist für alle IT-interessierte adressiert und zeigt eine Übersicht des genutzten Tech Stacks.</p>
       <a frameborder="2" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" 
           href="https://embed.stackshare.io/stacks/embed/de7e4a1814d141d1f8338893ca2edd"/>    
 
