@@ -23,7 +23,7 @@ export default {
   mounted() {
       let stackshareClientScript = document.createElement('script')
       stackshareClientScript.setAttribute('src', 'https://cdn1.stackshare.io/javascripts/client-code.js')
-      stackshareClientScript.setAttribute('chatset', 'utf-8')
+      stackshareClientScript.setAttribute('charset', 'utf-8')
       document.head.appendChild(stackshareClientScript)
     }
 }
