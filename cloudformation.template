@@ -1,0 +1,441 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation Sample Template S3_Website_With_CloudFront_Distribution: Creates a website with a custom DNS name, hosted on Amazon S3 and served via Amazone CloudFront. It assumes you already have a Hosted Zone registered with Amazon Route 53. **WARNING** This template creates an Amazon Route 53 DNS record, an S3 bucket and a CloudFront distribution.",
+    "Parameters": {
+        "HostedZone": {
+            "Type": "String",
+            "Description": "The DNS name of an existing Amazon Route 53 hosted zone",
+            "AllowedPattern": "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)",
+            "ConstraintDescription": "must be a valid DNS zone name."
+        },
+        "Subdomain": {
+            "Type": "String",
+            "Description": "The subdomain in the hosted zone within Amazon Route 53",
+            "AllowedPattern": "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)",
+            "ConstraintDescription": "must be a valid DNS subdomain name."
+        },
+        "SslCertificateArn": {
+            "Type": "String",
+            "Description": "The ARN of the SSL certificate to be used in CloudFront",
+            "Default": " arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2"
+        }
+    },
+    "Mappings": {
+        "Region2S3WebsiteSuffix": {
+            "us-east-1": {
+                "Suffix": ".s3-us-east-1.amazonaws.com"
+            },
+            "us-west-1": {
+                "Suffix": ".s3-us-west-1.amazonaws.com"
+            },
+            "us-west-2": {
+                "Suffix": ".s3-us-west-2.amazonaws.com"
+            },
+            "eu-west-1": {
+                "Suffix": ".s3-eu-west-1.amazonaws.com"
+            },
+            "eu-west-2": {
+                "Suffix": ".s3-eu-west-2.amazonaws.com"
+            },
+            "eu-west-3": {
+                "Suffix": ".s3-eu-west-3.amazonaws.com"
+            },
+            "ap-northeast-1": {
+                "Suffix": ".s3-ap-northeast-1.amazonaws.com"
+            },
+            "ap-northeast-2": {
+                "Suffix": ".s3-ap-northeast-2.amazonaws.com"
+            },
+            "ap-northeast-3": {
+                "Suffix": ".s3-ap-northeast-3.amazonaws.com"
+            },
+            "ap-southeast-1": {
+                "Suffix": ".s3-ap-southeast-1.amazonaws.com"
+            },
+            "ap-southeast-2": {
+                "Suffix": ".s3-ap-southeast-2.amazonaws.com"
+            },
+            "ap-south-1": {
+                "Suffix": ".s3-ap-south-1.amazonaws.com"
+            },
+            "us-east-2": {
+                "Suffix": ".s3-us-east-2.amazonaws.com"
+            },
+            "ca-central-1": {
+                "Suffix": ".s3-ca-central-1.amazonaws.com"
+            },
+            "sa-east-1": {
+                "Suffix": ".s3-sa-east-1.amazonaws.com"
+            },
+            "cn-north-1": {
+                "Suffix": ".s3-cn-north-1.amazonaws.com.cn"
+            },
+            "cn-northwest-1": {
+                "Suffix": ".s3-cn-northwest-1.amazonaws.com.cn"
+            },
+            "eu-central-1": {
+                "Suffix": ".s3-eu-central-1.amazonaws.com"
+            },
+            "eu-north-1": {
+                "Suffix": ".s3-eu-north-1.amazonaws.com"
+            }
+        }
+    },
+    "Resources": {
+        "S3BucketForWebsiteContent": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "AccessControl": "BucketOwnerFullControl",
+                "BucketName": {
+                    "Fn::Join": [
+                        ".",
+                        [
+                            {
+                                "Ref": "Subdomain"
+                            },
+                            {
+                                "Ref": "HostedZone"
+                            }
+                        ]
+                    ]
+                },
+                "CorsConfiguration": {
+                    "CorsRules": [
+                        {
+                            "AllowedOrigins": [
+                                "*"
+                            ],
+                            "AllowedMethods": [
+                                "GET"
+                            ],
+                            "AllowedHeaders": [
+                                "Authorization",
+                                "Content-Length"
+                            ],
+                            "MaxAge": 3000
+                        }
+                    ]
+                },
+                "WebsiteConfiguration": {
+                    "IndexDocument": "index.html",
+                    "ErrorDocument": "error.html"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "923752c7-3c11-467e-842c-be08a33a22e2"
+                }
+            }
+        },
+        "WebsiteCDN": {
+            "Type": "AWS::CloudFront::Distribution",
+            "Properties": {
+                "DistributionConfig": {
+                    "Comment": "CDN for S3-backed website",
+                    "Aliases": [
+                        {
+                            "Fn::Join": [
+                                ".",
+                                [
+                                    {
+                                        "Ref": "Subdomain"
+                                    },
+                                    {
+                                        "Ref": "HostedZone"
+                                    }
+                                ]
+                            ]
+                        }
+                    ],
+                    "Enabled": "true",
+                    "DefaultCacheBehavior": {
+                        "AllowedMethods": [
+                            "GET",
+                            "HEAD"
+                        ],
+                        "CachedMethods": [
+                            "GET",
+                            "HEAD"
+                        ],
+                        "Compress": true,
+                        "ForwardedValues": {
+                            "QueryString": "false"
+                        },
+                        "TargetOriginId": "S3-keinecookies.de",
+                        "ViewerProtocolPolicy": "redirect-to-https"
+                    },
+                    "CacheBehaviors": [
+                        {
+                            "PathPattern": "index.html",
+                            "AllowedMethods": [
+                                "GET",
+                                "HEAD"
+                            ],
+                            "CachedMethods": [
+                                "GET",
+                                "HEAD"
+                            ],
+                            "DefaultTTL": 60,
+                            "MaxTTL": 3600,
+                            "MinTTL": 0,
+                            "Compress": true,
+                            "ForwardedValues": {
+                                "QueryString": "false"
+                            },
+                            "TargetOriginId": "S3-keinecookies.de",
+                            "ViewerProtocolPolicy": "redirect-to-https"
+                        }
+                    ],
+                    "ViewerCertificate": {
+                        "AcmCertificateArn": {
+                            "Ref": "SslCertificateArn"
+                        },
+                        "MinimumProtocolVersion": "TLSv1.1_2016",
+                        "SslSupportMethod": "sni-only"
+                    },
+                    "DefaultRootObject": "index.html",
+                    "Origins": [
+                        {
+                            "DomainName": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        {
+                                            "Ref": "S3BucketForWebsiteContent"
+                                        },
+                                        {
+                                            "Fn::FindInMap": [
+                                                "Region2S3WebsiteSuffix",
+                                                {
+                                                    "Ref": "AWS::Region"
+                                                },
+                                                "Suffix"
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            },
+                            "Id": "S3-keinecookies.de",
+                            "S3OriginConfig": {
+                                "OriginAccessIdentity": {
+                                    "Fn::Join": [
+                                        "/",
+                                        [
+                                            "origin-access-identity/cloudfront",
+                                            {
+                                                "Ref": "OriginAccessIdentity"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "44181fe4-d3fe-47c1-a181-a2c1336cd858"
+                }
+            }
+        },
+        "WebsiteDNSName": {
+            "Type": "AWS::Route53::RecordSet",
+            "Properties": {
+                "HostedZoneName": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "HostedZone"
+                            },
+                            "."
+                        ]
+                    ]
+                },
+                "Comment": "CNAME redirect custom name to CloudFront distribution",
+                "Name": {
+                    "Fn::Join": [
+                        ".",
+                        [
+                            {
+                                "Ref": "Subdomain"
+                            },
+                            {
+                                "Ref": "HostedZone"
+                            }
+                        ]
+                    ]
+                },
+                "Type": "A",
+                "AliasTarget": {
+                    "DNSName": {
+                        "Fn::GetAtt": [
+                            "WebsiteCDN",
+                            "DomainName"
+                        ]
+                    },
+                    "HostedZoneId": "Z2FDTNDATAQYW2"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "9fe4ed08-4713-4340-99be-8f38aa53b635"
+                }
+            }
+        },
+        "S3BucketPolicy": {
+            "Type": "AWS::S3::BucketPolicy",
+            "Properties": {
+                "Bucket": {
+                    "Ref": "S3BucketForWebsiteContent"
+                },
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Id": "Policy1586382178469",
+                    "Statement": [
+                        {
+                            "Sid": "1",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        " ",
+                                        [
+                                            "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity",
+                                            {
+                                                "Ref": "OriginAccessIdentity"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            },
+                            "Action": "s3:GetObject",
+                            "Resource": {
+                                "Fn::Join": [
+                                    "/",
+                                    [
+                                        {
+                                            "Fn::GetAtt": [
+                                                "S3BucketForWebsiteContent",
+                                                "Arn"
+                                            ]
+                                        },
+                                        "*"
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "86cad211-9286-49dd-8bcd-2dd88f388234"
+                }
+            }
+        },
+        "OriginAccessIdentity": {
+            "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+            "Properties": {
+                "CloudFrontOriginAccessIdentityConfig": {
+                    "Comment": "No comment"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "95c5a64b-765d-40bf-a9d3-830143780501"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "WebsiteURL": {
+            "Value": {
+                "Fn::Join": [
+                    "",
+                    [
+                        "http://",
+                        {
+                            "Ref": "WebsiteDNSName"
+                        }
+                    ]
+                ]
+            },
+            "Description": "The URL of the newly created website"
+        },
+        "BucketName": {
+            "Value": {
+                "Ref": "S3BucketForWebsiteContent"
+            },
+            "Description": "Name of S3 bucket to hold website content"
+        }
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "923752c7-3c11-467e-842c-be08a33a22e2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 60,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "44181fe4-d3fe-47c1-a181-a2c1336cd858": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 170,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "9fe4ed08-4713-4340-99be-8f38aa53b635": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 60,
+                    "y": 190
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "86cad211-9286-49dd-8bcd-2dd88f388234": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 60,
+                    "y": -20
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "923752c7-3c11-467e-842c-be08a33a22e2"
+                ]
+            },
+            "95c5a64b-765d-40bf-a9d3-830143780501": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 170,
+                    "y": -20
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    }
+}
