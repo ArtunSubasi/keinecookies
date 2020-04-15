@@ -43,6 +43,6 @@ workflows:
               only: 
                 - master
                 - develop
-          sync_to: ${CIRCLE_BRANCH}
+          sync_to: "<< pipeline.git.branch >>"
 
 
