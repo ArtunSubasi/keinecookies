@@ -2,6 +2,16 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
   aws-s3: circleci/aws-s3@1.0.15
+commands:
+  sync_to_s3:
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - aws-s3/sync: # Invoke the sync command declared in the s3 orb
+          arguments: --cache-control "max-age=604800"
+          from: /tmp/workspace/dist
+          to: $AWS_S3_SYNC_TO # Read the S3 URL from the CircleCI context
+          overwrite: true
 jobs:
   build:
     executor:
@@ -16,33 +26,33 @@ jobs:
                 root: ~/project
                 paths:
                   - dist
-  deploy:
+  deploy-to-dev:
     docker:
       - image: cimg/python:3.6
-    parameters:
-      sync_to:
-        description: "The S3 URL to sync to"
-        type: string
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - aws-s3/sync: # Invoke the sync command declared in the s3 orb
-          arguments: --cache-control "max-age=604800"
-          from: /tmp/workspace/dist
-          to: "<< parameters.sync_to >>"
-          overwrite: true
+      - sync_to_s3
+  deploy-to-prod:
+    docker:
+      - image: cimg/python:3.6
+    steps:
+      - sync_to_s3
 workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy:
+      - deploy-to-dev:
+          context: develop
           requires:
-            - build # Only run deploy job once the build job has completed
+            - build
+          filters:
+            branches:
+              only: 
+                - develop
+      - deploy-to-prod:
+          context: master
+          requires:
+            - build
           filters:
             branches:
               only: 
                 - master
-                - develop
-          sync_to: "<< pipeline.git.branch >>"
-
-
