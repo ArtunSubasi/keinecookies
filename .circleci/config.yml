@@ -19,13 +19,17 @@ jobs:
   deploy:
     docker:
       - image: cimg/python:3.6
+    parameters:
+      sync_to:
+        description: "The S3 URL to sync to"
+        type: string
     steps:
       - attach_workspace:
           at: /tmp/workspace
       - aws-s3/sync: # Invoke the sync command declared in the s3 orb
           arguments: --cache-control "max-age=604800"
           from: /tmp/workspace/dist
-          to: $AWS_S3_SYNC_TO
+          to: "<< parameters.sync_to >>"
           overwrite: true
 workflows:
   build-and-deploy:
@@ -34,9 +38,11 @@ workflows:
       - deploy:
           requires:
             - build # Only run deploy job once the build job has completed
-          context: $CIRCLE_BRANCH
           filters:
             branches:
               only: 
                 - master
                 - develop
+          sync_to: ${CIRCLE_BRANCH}
+
+
