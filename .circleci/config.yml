@@ -34,7 +34,7 @@ workflows:
       - deploy:
           requires:
             - build # Only run deploy job once the build job has completed
-          context: ${pipeline.git.branch}
+          context: $CIRCLE_BRANCH
           filters:
             branches:
               only: 
