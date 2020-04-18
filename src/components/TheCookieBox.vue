@@ -31,6 +31,6 @@ module.exports = {
     overflow: visible !important;
     white-space: nowrap;
     cursor: pointer;
-    background-image: url("/assets/cookie-icon.png");
+    background-image: url("~@/assets/cookie-icon.png");
 }
 </style>
