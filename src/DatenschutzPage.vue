@@ -47,17 +47,17 @@
 
       <p class="quelle"><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
     </div>
-    <Footer/>
+    <NavigationBar/>
   </div>
 </template>
 
 <script>
-import Footer from './Footer.vue'
+import NavigationBar from './components/NavigationBar.vue'
 
 export default {
   name: 'DatenschutzPage',
   components: {
-    Footer
+    NavigationBar
   }
 }
 </script>

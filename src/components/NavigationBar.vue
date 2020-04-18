@@ -1,5 +1,5 @@
 <template>  
-  <div id="footer">
+  <div id="navigationBar">
     <router-link to="/" exact>Startseite</router-link>
     <router-link to="/paq">PAQ</router-link>
     <a href="https://stackshare.io/ArtunSubasi/keinecookies-de">Tech Stack</a>
@@ -17,7 +17,7 @@ module.exports = {
 </script>
 
 <style scoped>
-#footer {
+#navigationBar {
   margin: 20px;
   text-align: center;
 }

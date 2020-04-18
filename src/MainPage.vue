@@ -143,7 +143,7 @@
           </p>
         </div>
       </div>
-      <Footer/>
+      <NavigationBar/>
       <CookieBox/>
     </div>
   </div>
@@ -151,8 +151,8 @@
 
 <script>
 require('typeface-open-sans')
-import Footer from './Footer.vue'
-import CookieBox from './CookieBox.vue'
+import NavigationBar from './components/NavigationBar.vue'
+import CookieBox from './components/CookieBox.vue'
 
 export default {
   name: 'MainPage',
@@ -163,7 +163,7 @@ export default {
     }
   },
   components: {
-    Footer,
+    NavigationBar,
     CookieBox
   }
 }

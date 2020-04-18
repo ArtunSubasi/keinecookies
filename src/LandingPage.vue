@@ -28,14 +28,14 @@
           </p>
         </div>
       </div>
-      <Footer/>
+      <NavigationBar/>
     </div>
   </div>
 </template>
 
 <script>
 require('typeface-open-sans')
-import Footer from './Footer.vue'
+import NavigationBar from './components/NavigationBar.vue'
 
 export default {
   name: 'LandingPage',
@@ -50,7 +50,7 @@ export default {
     }
   },
   components: {
-    Footer
+    NavigationBar
   }
 }
 </script>

@@ -54,16 +54,16 @@
         Was ist deine Meinung?
       </p>
     </div>
-    <Footer/>
+    <NavigationBar/>
   </div>
 </template>
 
 <script>
-import Footer from './Footer.vue'
+import NavigationBar from './components/NavigationBar.vue'
 export default {
   name: 'Paq',
   components: {
-    Footer
+    NavigationBar
   }
 }
 </script>

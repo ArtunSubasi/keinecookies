@@ -8,16 +8,16 @@
       <a href="https://twitter.com/ArtunSubasi"><img src="./assets/twitter-icon_64x64.png" alt="Twitter Icon" /></a>      
       <a href="mailto:wirklich@keinecookies.de"><img src="./assets/iconfinder_mail_287559.png" alt="E-Mail Icon" /></a>
     </div>
-    <Footer/>
+    <NavigationBar/>
   </div>
 </template>
 
 <script>
-import Footer from './Footer.vue'
+import NavigationBar from './components/NavigationBar.vue'
 export default {
   name: 'Kontakt',
   components: {
-    Footer
+    NavigationBar
   }
 }
 </script>
