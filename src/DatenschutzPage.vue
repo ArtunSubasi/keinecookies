@@ -55,7 +55,7 @@
 import Footer from './Footer.vue'
 
 export default {
-  name: 'Datenschutz',
+  name: 'DatenschutzPage',
   components: {
     Footer
   }

@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 import LandingPage from './LandingPage.vue'
-import Impressum from './Impressum.vue'
-import Datenschutz from './Datenschutz.vue'
-import Paq from './Paq.vue'
-import Kontakt from './Kontakt.vue'
-import CookieAuswahl from './CookieAuswahl.vue'
+import ImpressumPage from './ImpressumPage.vue'
+import DatenschutzPage from './DatenschutzPage.vue'
+import PaqPage from './PaqPage.vue'
+import KontaktPage from './KontaktPage.vue'
+import CookieAuswahlPage from './CookieAuswahlPage.vue'
 import MainPage from './MainPage.vue'
 
 import BootstrapVue from 'bootstrap-vue'
@@ -26,11 +26,11 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', component: LandingPage },
   { path: '/cookies-mit-echten-cookies', component: LandingPage, props: { headerText: 'Sorry :(', negationText: 'WIRKLICH KEINE' } },
-  { path: '/impressum', component: Impressum },
-  { path: '/datenschutz', component: Datenschutz },
-  { path: '/paq', component: Paq },
-  { path: '/kontakt', component: Kontakt },
-  { path: '/cookie-auswahl', component: CookieAuswahl },
+  { path: '/impressum', component: ImpressumPage },
+  { path: '/datenschutz', component: DatenschutzPage },
+  { path: '/paq', component: PaqPage },
+  { path: '/kontakt', component: KontaktPage },
+  { path: '/cookie-auswahl', component: CookieAuswahlPage },
   { path: '/chocolate-chip-cookies', component: MainPage, props: { cookieType: 'ChocolateChip' } },
   { path: '/macarons', component: MainPage, props: { cookieType: 'Macarons' } },
   { path: '/wirklich-keine-cookies', component: MainPage }
