@@ -54,16 +54,16 @@
         Was ist deine Meinung?
       </p>
     </div>
-    <NavigationBar/>
+    <TheNavigationBar/>
   </div>
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue'
+import TheNavigationBar from '@/components/TheNavigationBar.vue'
 export default {
   name: 'Paq',
   components: {
-    NavigationBar
+    TheNavigationBar
   }
 }
 </script>

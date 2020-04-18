@@ -11,16 +11,16 @@
       <p>Telefon: +49 151 554 79 199<br/>
       E-Mail: wirklich@keinecookies.de</p>
     </div>
-    <NavigationBar/>
+    <TheNavigationBar/>
   </div>
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue'
+import TheNavigationBar from '@/components/TheNavigationBar.vue'
 export default {
   name: 'Impressum',
   components: {
-    NavigationBar
+    TheNavigationBar
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>  
   <router-link to="/cookie-auswahl">
-    <div id="cookieBox"></div>
+    <div id="TheCookieBox"></div>
   </router-link>
 </template>
 
@@ -10,7 +10,7 @@ module.exports = {
 </script>
 
 <style scoped>
-#cookieBox {
+#TheCookieBox {
     position: fixed !important;
     display: inline-block !important;
     visibility: visible !important;

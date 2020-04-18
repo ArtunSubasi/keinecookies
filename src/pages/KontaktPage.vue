@@ -8,16 +8,16 @@
       <a href="https://twitter.com/ArtunSubasi"><img src="@/assets/twitter-icon_64x64.png" alt="Twitter Icon" /></a>      
       <a href="mailto:wirklich@keinecookies.de"><img src="@/assets/iconfinder_mail_287559.png" alt="E-Mail Icon" /></a>
     </div>
-    <NavigationBar/>
+    <TheNavigationBar/>
   </div>
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue'
+import TheNavigationBar from '@/components/TheNavigationBar.vue'
 export default {
   name: 'Kontakt',
   components: {
-    NavigationBar
+    TheNavigationBar
   }
 }
 </script>

@@ -143,16 +143,16 @@
           </p>
         </div>
       </div>
-      <NavigationBar/>
-      <CookieBox/>
+      <TheNavigationBar/>
+      <TheCookieBox/>
     </div>
   </div>
 </template>
 
 <script>
 require('typeface-open-sans')
-import NavigationBar from '@/components/NavigationBar.vue'
-import CookieBox from '@/components/CookieBox.vue'
+import TheNavigationBar from '@/components/TheNavigationBar.vue'
+import TheCookieBox from '@/components/TheCookieBox.vue'
 
 export default {
   name: 'MainPage',
@@ -163,8 +163,8 @@ export default {
     }
   },
   components: {
-    NavigationBar,
-    CookieBox
+    TheNavigationBar,
+    TheCookieBox
   }
 }
 </script>

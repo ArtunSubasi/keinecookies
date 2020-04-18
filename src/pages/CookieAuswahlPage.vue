@@ -27,19 +27,19 @@
           </p>
         </div>
       </div>
-      <NavigationBar/>
+      <TheNavigationBar/>
     </div>
   </div>
 </template>
 
 <script>
 require('typeface-open-sans')
-import NavigationBar from '@/components/NavigationBar.vue'
+import TheNavigationBar from '@/components/TheNavigationBar.vue'
 
 export default {
   name: 'CookieAuswahl',
   components: {
-    NavigationBar
+    TheNavigationBar
   }
 }
 </script>
