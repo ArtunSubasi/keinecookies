@@ -2,11 +2,36 @@
   <div id="kontakt">
     <div class="container">
       <h1>Kontakt</h1>
-      <a href="https://github.com/ArtunSubasi"><img src="@/assets/GitHub-Mark-Light-64px.png" alt="GitHub Icon" /></a>
-      <a href="https://www.xing.com/profile/Artun_Subasi"><img src="@/assets/xing.png" alt="Xing Icon" /></a>
-      <a href="https://www.linkedin.com/in/artunsubasi/"><img src="@/assets/linkedin-icon_64x64.png" alt="LinkedIn Icon" /></a>
-      <a href="https://twitter.com/ArtunSubasi"><img src="@/assets/twitter-icon_64x64.png" alt="Twitter Icon" /></a>      
-      <a href="mailto:wirklich@keinecookies.de"><img src="@/assets/iconfinder_mail_287559.png" alt="E-Mail Icon" /></a>
+      <a href="https://github.com/ArtunSubasi">
+        <img 
+          src="@/assets/GitHub-Mark-Light-64px.png" 
+          alt="GitHub Icon" 
+        />
+      </a>
+      <a href="https://www.xing.com/profile/Artun_Subasi">
+        <img 
+          src="@/assets/xing.png" 
+          alt="Xing Icon" 
+        />
+      </a>
+      <a href="https://www.linkedin.com/in/artunsubasi/">
+        <img 
+          src="@/assets/linkedin-icon_64x64.png"
+          alt="LinkedIn Icon" 
+        />
+      </a>
+      <a href="https://twitter.com/ArtunSubasi">
+        <img 
+          src="@/assets/twitter-icon_64x64.png" 
+          alt="Twitter Icon" 
+        />
+      </a>      
+      <a href="mailto:wirklich@keinecookies.de">
+        <img 
+          src="@/assets/iconfinder_mail_287559.png"
+          alt="E-Mail Icon"
+        />
+      </a>
     </div>
 
     <TheNavigationBar/>

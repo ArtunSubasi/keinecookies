@@ -12,10 +12,43 @@
         <div class="row">
           <div class="mx-auto col-lg-6">
               <div class="btn-toolbar">
-                <b-button variant="primary" size="lg" block to="chocolate-chip-cookies">Chocolate Chip Cookies</b-button>
-                <b-button variant="primary" size="lg" block to="macarons">Macarons</b-button>
-                <b-button variant="secondary" size="lg" block to="wirklich-keine-cookies">Ich möchte doch keine Cookies</b-button>
-                <b-button variant="secondary" size="lg" block to="cookies-mit-echten-cookies">Ich wollte aber Cookies mit echten Cookies</b-button>
+
+                <b-button 
+                  variant="primary" 
+                  size="lg" 
+                  block 
+                  to="chocolate-chip-cookies"
+                >
+                Chocolate Chip Cookies
+                </b-button>
+
+                <b-button 
+                  variant="primary" 
+                  size="lg" 
+                  block 
+                  to="macarons"
+                >
+                Macarons
+                </b-button>
+
+                <b-button 
+                  variant="secondary"
+                  size="lg"
+                  block 
+                  to="wirklich-keine-cookies"
+                >
+                Ich möchte doch keine Cookies
+                </b-button>
+
+                <b-button 
+                  variant="secondary" 
+                  size="lg" 
+                  block 
+                  to="cookies-mit-echten-cookies"
+                >
+                Ich wollte aber Cookies mit echten Cookies
+                </b-button>
+                
               </div>
           </div>
         </div>

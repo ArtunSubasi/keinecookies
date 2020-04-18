@@ -14,8 +14,25 @@
         <div id="buttons" class="row">
           <div class="mx-auto">
               <div class="btn-toolbar">
-                <b-button variant="primary" size="lg" block to="wirklich-keine-cookies">Ich stimme zu!</b-button>
-                <b-button variant="secondary" size="lg" block to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
+
+                <b-button 
+                  variant="primary" 
+                  size="lg" 
+                  block 
+                  to="wirklich-keine-cookies"
+                >
+                Ich stimme zu!
+                </b-button>
+
+                <b-button 
+                  variant="secondary" 
+                  size="lg" 
+                  block 
+                  to="cookie-auswahl"
+                >
+                Ich wollte aber doch Cookies :(
+                </b-button>
+                
               </div>
           </div>
         </div>

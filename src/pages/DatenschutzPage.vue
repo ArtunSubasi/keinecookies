@@ -18,7 +18,13 @@
 
       <h3>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
       <p>Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit:<br/>
-      <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a></p>
+        <a 
+          href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" 
+          target="_blank"
+        >
+        https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html
+        </a>
+      </p>
 
       <h3>Recht auf Datenübertragbarkeit</h3>
       <p>Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
@@ -45,7 +51,16 @@
       <h3>Links zu Drittseiten</h3>
       <p>Beim Besuch der Webseite könnten Inhalte angezeigt werden, die mit den Webseiten Dritter verlinkt sind. Der Betreiber hat keinen Zugang zu den Cookies oder anderen Funktionen, die von Drittseiten eingesetzt werden, noch kann der Betreiber diese kontrollieren. Solche Drittseiten unterliegen nicht den Datenschutzbestimmungen des Betreibers.</p>
 
-      <p class="quelle"><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
+      <p class="quelle">
+        <small>Quelle: Datenschutz-Konfigurator von 
+          <a 
+            href="http://www.mein-datenschutzbeauftragter.de"
+            target="_blank"
+          >
+            mein-datenschutzbeauftragter.de
+          </a>
+        </small>
+      </p>
     </div>
 
     <TheNavigationBar/>
