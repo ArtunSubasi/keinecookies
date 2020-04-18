@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import NavigationBar from './components/NavigationBar.vue'
+import NavigationBar from '@/components/NavigationBar.vue'
 export default {
   name: 'Paq',
   components: {

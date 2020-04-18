@@ -1,21 +1,21 @@
 <template>
-  <div id="CookieAuswahl">
+  <div id="app">
     <div class="container">
-      <div id="header" class="row">
+      <div id="warnung-box" class="row">
         <div class="col-sm-12">
-            <p>
-              Was für Cookies möchtest du?<span class="faded">*</span>
-            </p>        
+            <div class="warnung"><h1>{{ headerText }}</h1></div>
+            <h2>
+              Diese Seite verwendet<br/>
+              <span class="warnung">{{ negationText }}</span> Cookies!<span class="faded">*</span>
+            </h2>        
         </div>
       </div>
-      <div id="buttons" class="container">
-        <div class="row">
-          <div class="mx-auto col-lg-6">
+      <div  class="container">
+        <div id="buttons" class="row">
+          <div class="mx-auto">
               <div class="btn-toolbar">
-                <b-button variant="primary" size="lg" block to="chocolate-chip-cookies">Chocolate Chip Cookies</b-button>
-                <b-button variant="primary" size="lg" block to="macarons">Macarons</b-button>
-                <b-button variant="secondary" size="lg" block to="wirklich-keine-cookies">Ich möchte doch keine Cookies</b-button>
-                <b-button variant="secondary" size="lg" block to="cookies-mit-echten-cookies">Ich wollte aber Cookies mit echten Cookies</b-button>
+                <b-button variant="primary" size="lg" block to="wirklich-keine-cookies">Ich stimme zu!</b-button>
+                <b-button variant="secondary" size="lg" block to="cookie-auswahl">Ich wollte aber doch Cookies :(</b-button>
               </div>
           </div>
         </div>
@@ -23,7 +23,8 @@
       <div id="disclaimer" class="row">
         <div class="mx-auto">
           <p>
-          * Mir ist klar, dass meine Cookie-Auswahl ohne Cookies gespeichert und beim nächsten Besuch dieser Seite verloren gehen wird.
+          * No Bullshit: Diese Seite speichert keine notwendigen Cookies, keine Statistik-Cookies, 
+          keine Marketing-Cookies, keine Cookies für Partnerschaften o.ä. Keine Cookies halt.
           </p>
         </div>
       </div>
@@ -34,10 +35,20 @@
 
 <script>
 require('typeface-open-sans')
-import NavigationBar from './components/NavigationBar.vue'
+import NavigationBar from '@/components/NavigationBar.vue'
 
 export default {
-  name: 'CookieAuswahl',
+  name: 'LandingPage',
+  props: {
+    headerText: {
+      type: String,
+      default: 'Warnung!'
+    },
+    negationText: {
+      type: String,
+      default: 'KEINE'
+    }
+  },
   components: {
     NavigationBar
   }
@@ -45,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-#CookieAuswahl {
+#app {
   text-align: center;
   display: flex;
   height: 100%;
@@ -58,15 +69,15 @@ export default {
   color: #db1f1f;
   font-weight: bold;
 }
-.header {
+h1 {
   font-size: 3em;
 }
 @media(min-width:576px) {
-  .header {
+  h1 {
     font-size: 5em;
   }
 }
-#header p {
+h2 {
   font-size: 2em;
   color: #f7ad3e;
 }
