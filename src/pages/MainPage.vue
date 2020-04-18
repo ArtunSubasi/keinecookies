@@ -178,16 +178,16 @@ import TheNavigationBar from '@/components/TheNavigationBar.vue'
 import TheCookieBox from '@/components/TheCookieBox.vue'
 
 export default {
-  name: 'MainPage',
+  name: 'MainPage',  
+  components: {
+    TheNavigationBar,
+    TheCookieBox
+  },
   props: {
     cookieType: {
       type: String,
       default: 'WirklichKeineCookies'
     }
-  },
-  components: {
-    TheNavigationBar,
-    TheCookieBox
   }
 }
 </script>

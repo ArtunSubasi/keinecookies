@@ -32,7 +32,7 @@
                 >
                 Ich wollte aber doch Cookies :(
                 </b-button>
-                
+
               </div>
           </div>
         </div>
@@ -58,6 +58,9 @@ import TheNavigationBar from '@/components/TheNavigationBar.vue'
 
 export default {
   name: 'LandingPage',
+  components: {
+    TheNavigationBar
+  },
   props: {
     headerText: {
       type: String,
@@ -67,9 +70,6 @@ export default {
       type: String,
       default: 'KEINE'
     }
-  },
-  components: {
-    TheNavigationBar
   }
 }
 </script>
