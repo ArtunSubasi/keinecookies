@@ -54,7 +54,9 @@
         Was ist deine Meinung?
       </p>
     </div>
+
     <TheNavigationBar/>
+    
   </div>
 </template>
 

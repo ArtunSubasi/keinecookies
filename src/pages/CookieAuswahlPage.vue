@@ -27,7 +27,9 @@
           </p>
         </div>
       </div>
+
       <TheNavigationBar/>
+      
     </div>
   </div>
 </template>

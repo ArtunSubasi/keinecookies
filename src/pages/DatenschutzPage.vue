@@ -47,7 +47,9 @@
 
       <p class="quelle"><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
     </div>
+
     <TheNavigationBar/>
+    
   </div>
 </template>
 

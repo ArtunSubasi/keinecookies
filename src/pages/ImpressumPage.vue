@@ -11,7 +11,9 @@
       <p>Telefon: +49 151 554 79 199<br/>
       E-Mail: wirklich@keinecookies.de</p>
     </div>
+
     <TheNavigationBar/>
+    
   </div>
 </template>
 

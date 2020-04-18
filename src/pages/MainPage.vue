@@ -143,8 +143,10 @@
           </p>
         </div>
       </div>
+
       <TheNavigationBar/>
       <TheCookieBox/>
+      
     </div>
   </div>
 </template>
