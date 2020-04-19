@@ -27,6 +27,7 @@ jobs:
                 root: ~/project
                 paths:
                   - dist
+                  - cloudformation
   deploy-to-dev:
     docker:
       - image: cimg/python:3.6
