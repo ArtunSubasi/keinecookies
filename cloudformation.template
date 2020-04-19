@@ -8,11 +8,11 @@
             "AllowedPattern": "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)",
             "ConstraintDescription": "must be a valid DNS zone name."
         },
-        "Subdomain": {
+        "Domain": {
             "Type": "String",
-            "Description": "The subdomain in the hosted zone within Amazon Route 53",
+            "Description": "The domain in the hosted zone within Amazon Route 53",
             "AllowedPattern": "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)",
-            "ConstraintDescription": "must be a valid DNS subdomain name."
+            "ConstraintDescription": "must be a valid DNS domain name."
         },
         "SslCertificateArn": {
             "Type": "String",
@@ -87,17 +87,7 @@
             "Properties": {
                 "AccessControl": "BucketOwnerFullControl",
                 "BucketName": {
-                    "Fn::Join": [
-                        ".",
-                        [
-                            {
-                                "Ref": "Subdomain"
-                            },
-                            {
-                                "Ref": "HostedZone"
-                            }
-                        ]
-                    ]
+                    "Ref": "Domain"
                 },
                 "CorsConfiguration": {
                     "CorsRules": [
@@ -134,17 +124,7 @@
                     "Comment": "CDN for S3-backed website",
                     "Aliases": [
                         {
-                            "Fn::Join": [
-                                ".",
-                                [
-                                    {
-                                        "Ref": "Subdomain"
-                                    },
-                                    {
-                                        "Ref": "HostedZone"
-                                    }
-                                ]
-                            ]
+                            "Ref": "Domain"
                         }
                     ],
                     "Enabled": "true",
@@ -263,17 +243,7 @@
                 },
                 "Comment": "CNAME redirect custom name to CloudFront distribution",
                 "Name": {
-                    "Fn::Join": [
-                        ".",
-                        [
-                            {
-                                "Ref": "Subdomain"
-                            },
-                            {
-                                "Ref": "HostedZone"
-                            }
-                        ]
-                    ]
+                    "Ref": "Domain"
                 },
                 "Type": "A",
                 "AliasTarget": {
