@@ -1,0 +1,5 @@
+{
+    "HostedZone": "keinecookies.de",
+    "Domain": "dev.keinecookies.de",
+    "SslCertificateArn": "arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2"
+}

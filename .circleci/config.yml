@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
   aws-s3: circleci/aws-s3@1.0.15
-  aws-cloudformation: orbss/aws-cloudformation@0.1.6
+  cloudformation: davidkelley/cloudformation@1.2.3
 commands:
   sync_to_s3:
     steps:
@@ -41,11 +41,16 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - aws-cloudformation/deploy:
+      - cloudformation/deploy:
           stack-name: dev
-          branch: develop
-          template-file-path: cloudformation.template
-          extra-arguments: --parameters HostedZone=keinecookies.de,Domain=dev.keinecookies.de
+          workspace: /tmp/workspace
+          template-file: cloudformation/keinecookies.template
+          input-json: /tmp/workspace/cloudformation/env-dev.json
+          output-json: /tmp/workspace/output.json
+          after-deploy:
+            - run:
+                command: |
+                  cat /workspace/outputs.json | jq
           requires:
             - build
           filters:
@@ -55,7 +60,7 @@ workflows:
       - deploy-to-dev:
           context: develop
           requires:
-            - aws-cloudformation/deploy
+            - cloudformation/deploy
           filters:
             branches:
               only: 
