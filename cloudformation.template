@@ -325,6 +325,30 @@
                                     ]
                                 ]
                             }
+                        },
+                        {
+                            "Sid": "2",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        " ",
+                                        [
+                                            "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity",
+                                            {
+                                                "Ref": "OriginAccessIdentity"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            },
+                            "Action": "s3:ListBucket",
+                            "Resource": {
+                                "Fn::GetAtt": [
+                                    "S3BucketForWebsiteContent",
+                                    "Arn"
+                                ]
+                            }
                         }
                     ]
                 }
