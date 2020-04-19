@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
   aws-s3: circleci/aws-s3@1.0.15
+  aws-cloudformation: orbss/aws-cloudformation@0.1.6
 commands:
   sync_to_s3:
     steps:
@@ -40,10 +41,21 @@ workflows:
   build-and-deploy:
     jobs:
       - build
+      - aws-cloudformation/deploy:
+          stack-name: dev
+          branch: develop
+          template-file-path: cloudformation.template
+          extra-arguments: --parameters HostedZone=keinecookies.de,Domain=dev.keinecookies.de
+          requires:
+            - build
+          filters:
+            branches:
+              only: 
+                - develop
       - deploy-to-dev:
           context: develop
           requires:
-            - build
+            - aws-cloudformation/deploy
           filters:
             branches:
               only: 
