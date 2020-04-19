@@ -18,7 +18,8 @@ const routes = [
   { path: '/cookie-auswahl', component: CookieAuswahlPage },
   { path: '/chocolate-chip-cookies', component: MainPage, props: { cookieType: 'ChocolateChip' } },
   { path: '/macarons', component: MainPage, props: { cookieType: 'Macarons' } },
-  { path: '/wirklich-keine-cookies', component: MainPage }
+  { path: '/wirklich-keine-cookies', component: MainPage },
+  { path: '*', component: LandingPage, props: { headerText: '404, Oops!', negationText: 'KEINE' } }
 ]
 
 export default new VueRouter({
