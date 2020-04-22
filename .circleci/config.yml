@@ -28,7 +28,7 @@ commands:
       - run: >
           aws cloudformation deploy 
           --stack-name=<< parameters.stack_name >> 
-          --template-file=keinecookies.template 
+          --template-file=/tmp/workspace/cloudformation/keinecookies.template 
           --no-fail-on-empty-changeset 
           --parameter-overrides 
           HostedZone=keinecookies.de 
