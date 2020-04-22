@@ -27,7 +27,7 @@ jobs:
                 paths:
                   - dist
                   - cloudformation
-  update-cloudformation-stack:
+  deploy-cloudformation-stack:
     executor: aws-cli/default
     parameters:
       stack_name:
@@ -49,12 +49,7 @@ jobs:
           HostedZone=keinecookies.de 
           Domain=<< parameters.domain >> 
           SslCertificateArn=<< parameters.ssl_certificate_arn >> 
-  deploy-to-dev:
-    docker:
-      - image: cimg/python:3.6
-    steps:
-      - sync_to_s3
-  deploy-to-prod:
+  deploy-website-to-s3:
     docker:
       - image: cimg/python:3.6
     steps:
@@ -63,8 +58,8 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - update-cloudformation-stack:
-          name: update-cloudformation-stack-dev
+      - deploy-cloudformation-stack:
+          name: deploy-cloudformation-stack-dev
           stack_name: dev
           domain: dev.keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
@@ -74,8 +69,8 @@ workflows:
             branches:
               only: 
                 - develop
-      - update-cloudformation-stack:
-          name: update-cloudformation-stack-prod
+      - deploy-cloudformation-stack:
+          name: deploy-cloudformation-stack-prod
           stack_name: prod
           domain: keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/b49e5386-f97d-4b92-babe-f4b2b6df9cb4
@@ -85,18 +80,20 @@ workflows:
             branches:
               only: 
                 - master
-      - deploy-to-dev:
+      - deploy-website-to-s3:
+          name: deploy-website-to-s3-dev
           context: develop
           requires:
-            - update-cloudformation-stack-dev
+            - deploy-cloudformation-stack-dev
           filters:
             branches:
               only: 
                 - develop
-      - deploy-to-prod:
+      - deploy-website-to-s3:
+          name: deploy-website-to-s3-prod
           context: master
           requires:
-            - update-cloudformation-stack-prod
+            - deploy-cloudformation-stack-prod
           filters:
             branches:
               only: 
