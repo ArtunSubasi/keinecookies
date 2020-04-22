@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
   aws-s3: circleci/aws-s3@1.0.15
-  cloudformation: davidkelley/cloudformation@1.2.3
+  aws-cli: circleci/aws-cli@1.0.0
 commands:
   sync_to_s3:
     steps:
@@ -13,10 +13,30 @@ commands:
           from: /tmp/workspace/dist
           to: $AWS_S3_SYNC_TO # Read the S3 URL from the CircleCI context
           overwrite: true
+  update_cloudformation_stack:
+    parameters:
+      stack_name:
+        type: string
+      domain:
+        type: string
+      ssl_certificate_arn:
+        type: string
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - aws-cli/setup
+      - run: >
+          aws cloudformation deploy 
+          --stack-name=<< parameters.stack_name >> 
+          --template-file=keinecookies.template 
+          --no-fail-on-empty-changeset 
+          --parameter-overrides 
+          HostedZone=keinecookies.de 
+          Domain=<< parameters.domain >> 
+          SslCertificateArn=<< parameters.ssl_certificate_arn >> 
 jobs:
   build:
-    executor:
-      name: node/default
+    executor: node/default
     steps:
       - checkout
       - node/with-cache:
@@ -28,6 +48,13 @@ jobs:
                 paths:
                   - dist
                   - cloudformation
+  update-cloudformation-stack-dev:
+    executor: aws-cli/default
+    steps:
+      - update_cloudformation_stack:
+          stack_name: dev
+          domain: dev.keinecookies.de
+          ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
   deploy-to-dev:
     docker:
       - image: cimg/python:3.6
@@ -42,16 +69,7 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - cloudformation/deploy:
-          stack-name: dev
-          workspace: /tmp/workspace
-          template-file: cloudformation/keinecookies.template
-          input-json: /tmp/workspace/cloudformation/env-dev.json
-          output-json: /tmp/workspace/output.json
-          after-deploy:
-            - run:
-                command: |
-                  cat /workspace/outputs.json | jq
+      - update-cloudformation-stack-dev:
           requires:
             - build
           filters:
@@ -61,7 +79,7 @@ workflows:
       - deploy-to-dev:
           context: develop
           requires:
-            - cloudformation/deploy
+            - update-cloudformation-stack-dev
           filters:
             branches:
               only: 
