@@ -13,7 +13,22 @@ commands:
           from: /tmp/workspace/dist
           to: $AWS_S3_SYNC_TO # Read the S3 URL from the CircleCI context
           overwrite: true
-  update_cloudformation_stack:
+jobs:
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm run build
+            - persist_to_workspace:
+                root: ~/project
+                paths:
+                  - dist
+                  - cloudformation
+  update-cloudformation-stack:
+    executor: aws-cli/default
     parameters:
       stack_name:
         type: string
@@ -34,27 +49,6 @@ commands:
           HostedZone=keinecookies.de 
           Domain=<< parameters.domain >> 
           SslCertificateArn=<< parameters.ssl_certificate_arn >> 
-jobs:
-  build:
-    executor: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm run build
-            - persist_to_workspace:
-                root: ~/project
-                paths:
-                  - dist
-                  - cloudformation
-  update-cloudformation-stack-dev:
-    executor: aws-cli/default
-    steps:
-      - update_cloudformation_stack:
-          stack_name: dev
-          domain: dev.keinecookies.de
-          ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
   deploy-to-dev:
     docker:
       - image: cimg/python:3.6
@@ -69,13 +63,28 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - update-cloudformation-stack-dev:
+      - update-cloudformation-stack:
+          name: update-cloudformation-stack-dev
+          stack_name: dev
+          domain: dev.keinecookies.de
+          ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
           requires:
             - build
           filters:
             branches:
               only: 
                 - develop
+      - update-cloudformation-stack:
+          name: update-cloudformation-stack-prod
+          stack_name: prod
+          domain: keinecookies.de
+          ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/b49e5386-f97d-4b92-babe-f4b2b6df9cb4
+          requires:
+            - build
+          filters:
+            branches:
+              only: 
+                - master
       - deploy-to-dev:
           context: develop
           requires:
@@ -87,7 +96,7 @@ workflows:
       - deploy-to-prod:
           context: master
           requires:
-            - build
+            - update-cloudformation-stack-prod
           filters:
             branches:
               only: 
