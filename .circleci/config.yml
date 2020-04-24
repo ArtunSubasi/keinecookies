@@ -34,6 +34,8 @@ jobs:
         type: string
       domain:
         type: string
+      aliases:
+        type: string
       ssl_certificate_arn:
         type: string
     steps:
@@ -48,7 +50,8 @@ jobs:
           --parameter-overrides 
           HostedZone=keinecookies.de 
           Domain=<< parameters.domain >> 
-          SslCertificateArn=<< parameters.ssl_certificate_arn >> 
+          Aliases=<< parameters.aliases >> 
+          SslCertificateArn=<< parameters.ssl_certificate_arn >>           
   deploy-website-to-s3:
     docker:
       - image: cimg/python:3.6
@@ -62,6 +65,7 @@ workflows:
           name: deploy-cloudformation-stack-dev
           stack_name: dev
           domain: dev.keinecookies.de
+          aliases: dev.keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
           requires:
             - build
@@ -73,6 +77,7 @@ workflows:
           name: deploy-cloudformation-stack-prod
           stack_name: prod
           domain: keinecookies.de
+          aliases: keinecookies.de,www.keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/b49e5386-f97d-4b92-babe-f4b2b6df9cb4
           requires:
             - build
