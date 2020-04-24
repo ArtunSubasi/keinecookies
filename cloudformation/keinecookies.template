@@ -358,7 +358,7 @@
                 "Fn::Join": [
                     "",
                     [
-                        "http://",
+                        "https://",
                         {
                             "Ref": "WebsiteDNSName"
                         }
