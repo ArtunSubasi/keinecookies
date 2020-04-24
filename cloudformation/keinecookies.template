@@ -101,7 +101,7 @@
                                 "Authorization",
                                 "Content-Length"
                             ],
-                            "MaxAge": 3000
+                            "MaxAge": 3001
                         }
                     ]
                 },
@@ -340,7 +340,9 @@
             "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
             "Properties": {
                 "CloudFrontOriginAccessIdentityConfig": {
-                    "Comment": "No comment"
+                    "Comment": {
+                        "Ref": "Domain"
+                    }
                 }
             },
             "Metadata": {
