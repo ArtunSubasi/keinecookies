@@ -128,8 +128,7 @@
                     "Comment": "CDN for S3-backed website",
                     "Aliases": {
                         "Ref": "Aliases"
-                    }
-                    ,
+                    },
                     "Enabled": "true",
                     "DefaultCacheBehavior": {
                         "AllowedMethods": [
