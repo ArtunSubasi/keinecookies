@@ -126,11 +126,10 @@
             "Properties": {
                 "DistributionConfig": {
                     "Comment": "CDN for S3-backed website",
-                    "Aliases": [
-                        {
-                            "Ref": "Aliases"
-                        }
-                    ],
+                    "Aliases": {
+                        "Ref": "Aliases"
+                    }
+                    ,
                     "Enabled": "true",
                     "DefaultCacheBehavior": {
                         "AllowedMethods": [
