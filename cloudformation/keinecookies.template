@@ -17,7 +17,6 @@
         "Aliases": {
             "Type": "CommaDelimitedList",
             "Description": "A list of strings containing information about CNAMEs (alternate domain names), if any, for this distribution. Must at least contain the domain name.",
-            "AllowedPattern": "(?!-)[a-zA-Z0-9-.,]{1,63}(?<!-)",
             "ConstraintDescription": "must be a valid DNS domain name."
         },
         "SslCertificateArn": {
