@@ -1,7 +1,7 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/ArtunSubasi/keinecookies.svg)](https://circleci.com/gh/ArtunSubasi/workflows/keinecookies)
 [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/ArtunSubasi/keinecookies-de)
 
-# keinecookies
+# Keine Cookies
 Website: https://keinecookies.de
 
 ## Project setup
