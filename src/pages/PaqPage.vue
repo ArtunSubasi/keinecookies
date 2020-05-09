@@ -53,6 +53,11 @@
         <a href="https://www.quora.com/Is-a-macaroon-a-cookie">In einer Diskussion in Quora</a> gibt es unterschiedliche Meinungen dazu.
         Was ist deine Meinung?
       </p>
+
+      <h2>Was für eine Version sehe ich gerade?</h2>
+      <p>
+        {{ version }}
+      </p>
     </div>
 
     <TheNavigationBar/>
@@ -66,6 +71,11 @@ export default {
   name: 'Paq',
   components: {
     TheNavigationBar
+  },
+  data: function () {
+    return {
+        version: process.env.VUE_APP_VERSION
+    }
   }
 }
 </script>
