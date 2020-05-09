@@ -35,6 +35,10 @@ jobs:
           steps:
             - run: npm install
             - run: npx semantic-release
+            - persist_to_workspace:
+                root: ~/project
+                paths:
+                  - package.json
   deploy-cloudformation-stack:
     executor: aws-cli/default
     parameters:
@@ -68,7 +72,25 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - build
+      - build:
+          name: build-dev
+          filters:
+            branches:
+              ignore: 
+                - master
+      - release:
+          filters:
+            branches:
+              only: 
+                - master
+      - build:
+          name: build-prod
+          requires:
+            - release
+          filters:
+            branches:
+              only: 
+                - master
       - deploy-cloudformation-stack:
           name: deploy-cloudformation-stack-dev
           stack_name: dev
@@ -76,18 +98,11 @@ workflows:
           aliases: dev.keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/4c4d019e-6e9b-4dcb-a1a0-80ae2b425dd2
           requires:
-            - build
+            - build-dev
           filters:
             branches:
               only: 
                 - develop
-      - release:
-          requires:
-            - build
-          filters:
-            branches:
-              only: 
-                - master
       - deploy-cloudformation-stack:
           name: deploy-cloudformation-stack-prod
           stack_name: prod
@@ -95,7 +110,7 @@ workflows:
           aliases: keinecookies.de,www.keinecookies.de
           ssl_certificate_arn: arn:aws:acm:us-east-1:452562348886:certificate/b49e5386-f97d-4b92-babe-f4b2b6df9cb4
           requires:
-            - release
+            - build-prod
           filters:
             branches:
               only: 
