@@ -14,19 +14,6 @@ commands:
           to: $AWS_S3_SYNC_TO # Read the S3 URL from the CircleCI context
           overwrite: true
 jobs:
-  build:
-    executor: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm run build
-            - persist_to_workspace:
-                root: ~/project
-                paths:
-                  - dist
-                  - cloudformation
   release:
     executor: node/default
     steps:
@@ -35,10 +22,29 @@ jobs:
           steps:
             - run: npm install
             - run: npx semantic-release
+            - store_artifacts:
+                path: package.json 
             - persist_to_workspace:
                 root: ~/project
                 paths:
                   - package.json
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - attach_workspace:
+                at: /tmp/workspace
+            # If the release job was run, overwrite the package.json with the one that was persisted in the workspace
+            - run: "cp /tmp/workspace/package.json ~/project/package.json 2>/dev/null || :"
+            - run: npm install
+            - run: npm run build
+            - persist_to_workspace:
+                root: ~/project
+                paths:
+                  - dist
+                  - cloudformation
   deploy-cloudformation-stack:
     executor: aws-cli/default
     parameters:
