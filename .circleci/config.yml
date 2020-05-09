@@ -22,8 +22,6 @@ jobs:
           steps:
             - run: npm install
             - run: npx semantic-release
-            - store_artifacts:
-                path: package.json
             - persist_to_workspace:
                 root: ~/project
                 paths:
@@ -34,10 +32,6 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - attach_workspace:
-                at: /tmp/workspace
-            # If the release job was run, overwrite the package.json with the one that was persisted in the workspace
-            - run: "cp /tmp/workspace/package.json ~/project/package.json 2>/dev/null || :"
             - run: npm install
             - run: npm run build
             - persist_to_workspace:
